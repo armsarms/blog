@@ -4,19 +4,11 @@ title: 我的Blog
 ---
 <link rel="stylesheet" href="./css/index.css">
 <link rel="stylesheet" href="./css/bootstrap.min.css">  
-<script src="./jquery.min.js"></script>
+<script src="./js/jquery.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
 <h2>{{ page.title }}</h2>
 <p>最新文章</p>
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#">Home</a></li>
-  <li><a href="#">SVN</a></li>
-  <li><a href="#">iOS</a></li>
-  <li><a href="#">VB.Net</a></li>
-  <li><a href="#">Java</a></li>
-  <li><a href="#">PHP</a></li>
-</ul>
-<ul  class="nav nav-tabs">{% for post in site.posts %}
+<ul  class="nav nav-pills nav-stacked">{% for post in site.posts %}
 　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
      {% endfor %}
 </ul>
